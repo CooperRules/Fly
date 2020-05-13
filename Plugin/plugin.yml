@@ -1,0 +1,8 @@
+name: Fly
+main: net.maplemc.cooper.Main
+version: 1.0
+api-version: 1.12.2
+commands:
+   fly:
+      description: A simple fly command.
+      usage: /fly
