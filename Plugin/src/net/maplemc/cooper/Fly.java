@@ -2,11 +2,13 @@ package net.maplemc.cooper;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-public class Fly {
+
+public class Fly implements CommandExecutor {
 
 	public boolean onCommand(CommandSender commandsend, Command fly, String simplefirstword, String[] arg0) {
 		if (commandsend instanceof Player) {
@@ -41,5 +43,6 @@ public class Fly {
 		}
 		return false;
 	}
+
 
 }
