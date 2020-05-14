@@ -6,3 +6,9 @@ commands:
    fly:
       description: A simple fly command.
       usage: /fly
+   gms:
+      description: Sets your gamemode to survival.
+      usage: /gms
+   gmc:
+      description: Sets yoru gamemode to creative.
+      usage: /gmc

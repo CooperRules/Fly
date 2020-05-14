@@ -9,6 +9,8 @@ public class Main extends JavaPlugin implements CommandExecutor {
 	@Override
 	public void onEnable() {
 		this.getCommand("fly").setExecutor(new Fly());
+		this.getCommand("gms").setExecutor(new Survival());
+		this.getCommand("gmc").setExecutor(new Gamemode());
 
 		Logger logger = this.getLogger();
 

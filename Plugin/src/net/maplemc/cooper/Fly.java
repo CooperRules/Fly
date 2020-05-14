@@ -15,16 +15,16 @@ public class Fly implements CommandExecutor {
 			Player player = (Player) commandsend;
 			if (player.hasPermission("simple.fly")) {
 
-				if (player.isFlying() == true) {
+				if (player.getAllowFlight() == true) {
 					player.setAllowFlight(false);
 					player.setFlying(false);
-					player.sendMessage(ChatColor.DARK_RED + "Fly on");
+					player.sendMessage(ChatColor.DARK_RED + "Fly off");
 
 				}
 				else {
 					player.setAllowFlight(true);			
 					player.setFlying(true);
-					player.sendMessage(ChatColor.DARK_RED + "Fly off");
+					player.sendMessage(ChatColor.DARK_RED + "Fly on");
 
 				}
 
@@ -41,7 +41,7 @@ public class Fly implements CommandExecutor {
 			System.out.println("You need to be a player to use this command!");
 
 		}
-		return false;
+		return true;
 	}
 
 
