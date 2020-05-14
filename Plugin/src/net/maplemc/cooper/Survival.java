@@ -12,6 +12,7 @@ public class Survival implements CommandExecutor {
 
 	public boolean onCommand(CommandSender commandsend, Command gms, String simplefirstword, String[] arg0) {
 		Player player = (Player) commandsend;
+
 		if (commandsend instanceof Player) {
 			if (player.hasPermission("set.gms")) {
 				player.setGameMode(GameMode.SURVIVAL);
@@ -23,13 +24,12 @@ public class Survival implements CommandExecutor {
 				
 				
 			}
-			if (commandsend instanceof ConsoleCommandSender) {
-				System.out.println("You cannot use this command as console!");
-
-			}
 
 
 
+		}
+		if (!(commandsend instanceof Player)) {
+			System.out.println("You cannot use this command as console!");
 		}
 
 

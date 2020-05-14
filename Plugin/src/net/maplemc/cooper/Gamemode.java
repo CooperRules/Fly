@@ -13,7 +13,13 @@ public class Gamemode implements CommandExecutor {
 
 	public boolean onCommand(CommandSender commandsend, Command gmc, String simplefirstword, String[] arg0) {
 		Player player = (Player) commandsend;
-		if (commandsend instanceof Player) {
+
+		if (!(commandsend instanceof Player)) {
+			System.out.println("You cannot use this command!");
+
+
+		}
+		else {
 			if (player.hasPermission("set.gmc")) {
 				player.setGameMode(GameMode.CREATIVE);
 				player.sendMessage(ChatColor.DARK_RED + "You are now in creative.");
@@ -22,12 +28,6 @@ public class Gamemode implements CommandExecutor {
 			else {
 				player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use GMC!");
 			}
-
-
-		}
-		if (commandsend instanceof ConsoleCommandSender) {
-			System.out.println("You cannot use this command as console!");
-
 		}
 
 
