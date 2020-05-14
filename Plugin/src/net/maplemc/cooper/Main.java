@@ -1,4 +1,6 @@
 package net.maplemc.cooper;
+import java.util.logging.Logger;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -19,6 +21,15 @@ public class Main extends JavaPlugin implements Listener {
         config.addDefault("message off", "off");
         config.options().copyDefaults(true);
         saveConfig();
+        Logger logger = this.getLogger();
+        
+        new UpdateChecker(this, 78792).getVersion(version -> {
+            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+                logger.info("There is not a new update available.");
+            } else {
+                logger.info("There is a new update available.");
+            }
+        });
         	
         	
         	
@@ -38,7 +49,7 @@ public class Main extends JavaPlugin implements Listener {
 				if (player.isFlying() == true) {
 					player.setAllowFlight(false);
 					player.setFlying(false);
-					player.sendMessage(config.getString("message on"));
+					player.sendMessage(config.getString("message on")));
 
 				}
 				else {
