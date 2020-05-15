@@ -1,17 +1,17 @@
 package net.maplemc.cooper;
-import java.io.File;
-import java.io.IOException;
+
 import java.util.logging.Logger;
 
-import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
-import net.maplemc.cooper.*;
 
-public class Main extends JavaPlugin implements CommandExecutor {
+
+import org.bukkit.command.CommandExecutor;
+
+import org.bukkit.event.Listener;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+
+public class Main extends JavaPlugin implements CommandExecutor, Listener {
 
 
 	@Override
@@ -24,6 +24,8 @@ public class Main extends JavaPlugin implements CommandExecutor {
 		this.getCommand("fly").setExecutor(new Fly(this));
 		this.getCommand("gms").setExecutor(new Survival(this));
 		this.getCommand("gmc").setExecutor(new Gamemode(this));
+		getServer().getPluginManager().registerEvents(this, this);
+
 		Logger logger = this.getLogger();
 		new UpdateChecker(this, 78792).getVersion(version -> {
 			if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
@@ -37,6 +39,7 @@ public class Main extends JavaPlugin implements CommandExecutor {
 
 
 	}
+	// event handler
 
 
 	@Override

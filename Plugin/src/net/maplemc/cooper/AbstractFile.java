@@ -1,6 +1,4 @@
 package net.maplemc.cooper;
-
-import net.maplemc.cooper.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 

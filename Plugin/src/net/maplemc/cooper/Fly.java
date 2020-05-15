@@ -5,11 +5,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
-import net.maplemc.cooper.*;
+
 
 
 
@@ -29,7 +27,7 @@ public class Fly  implements CommandExecutor {
 
 			
 
-			if (player.hasPermission("simple.fly")) {
+			if (player.hasPermission(config.get().getString("fly-permission-node"))) {
 		        config = new ConfigFile(plugin);
 
 				if (player.getAllowFlight() == true) {

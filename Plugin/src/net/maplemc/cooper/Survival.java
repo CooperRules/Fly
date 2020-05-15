@@ -25,7 +25,7 @@ public class Survival implements CommandExecutor {
 		if (commandsend instanceof Player) {
 			Player player = (Player) commandsend;
 
-			if (player.hasPermission("set.gms")) {
+			if (player.hasPermission(config.get().getString("gms-permission-node"))) {
 				player.setGameMode(GameMode.SURVIVAL);
 		        config = new ConfigFile(plugin);
 

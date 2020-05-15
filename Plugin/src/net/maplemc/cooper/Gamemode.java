@@ -5,7 +5,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import net.maplemc.cooper.Main;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -30,7 +29,7 @@ public class Gamemode implements CommandExecutor {
 		else {
 			Player player = (Player) commandsend;
 
-			if (player.hasPermission("set.gmc")) {
+			if (player.hasPermission(config.get().getString("gmc-permission-node"))) {
 				player.setGameMode(GameMode.CREATIVE);
 		        config = new ConfigFile(plugin);
 
