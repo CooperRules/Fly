@@ -2,12 +2,12 @@ package net.maplemc.cooper;
 
 import java.util.logging.Logger;
 
-
-
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
-
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -24,7 +24,7 @@ public class Main extends JavaPlugin implements CommandExecutor, Listener {
 		this.getCommand("fly").setExecutor(new Fly(this));
 		this.getCommand("gms").setExecutor(new Survival(this));
 		this.getCommand("gmc").setExecutor(new Gamemode(this));
-		getServer().getPluginManager().registerEvents(this, this);
+		this.getCommand("rename").setExecutor(new Rename(this));
 
 		Logger logger = this.getLogger();
 		new UpdateChecker(this, 78792).getVersion(version -> {
@@ -47,7 +47,8 @@ public class Main extends JavaPlugin implements CommandExecutor, Listener {
 		System.out.println("Shutting Down.");
 
 	}
-
+	
+			
 	   
 	}
 

@@ -23,13 +23,14 @@ public class Fly  implements CommandExecutor {
 	public boolean onCommand(CommandSender commandsend, Command fly, String simplefirstword, String[] arg0) {
 		if (commandsend instanceof Player) {
 			Player player = (Player) commandsend;
+	        config = new ConfigFile(plugin);
 
 
 			
 
 			if (player.hasPermission(config.get().getString("fly-permission-node"))) {
-		        config = new ConfigFile(plugin);
 
+			
 				if (player.getAllowFlight() == true) {
 					player.setAllowFlight(false);
 					player.setFlying(false);

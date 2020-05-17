@@ -12,8 +12,11 @@ public class ConfigFile extends AbstractFile {
         config.addDefault("survival-mode-text", "&4Survival Mode Enabled.");
         config.addDefault("fly-on-text", "&4Fly enabled.");
         config.addDefault("fly-off-text", "&4Fly disabled.");
-        config.addDefault("fly-permision-node", "set.fly");
+        config.addDefault("rename-message", "&4Item Renamed.");
+        config.addDefault("fly-permission-node", "set.fly");
         config.addDefault("gms-permission-node", "set.gms");
         config.addDefault("gmc-permission-node", "set.gmc");
+        config.addDefault("rename-permission", "set.rename");
+
     }
 }

@@ -28,10 +28,10 @@ public class Gamemode implements CommandExecutor {
 
 		else {
 			Player player = (Player) commandsend;
+	        config = new ConfigFile(plugin);
 
 			if (player.hasPermission(config.get().getString("gmc-permission-node"))) {
 				player.setGameMode(GameMode.CREATIVE);
-		        config = new ConfigFile(plugin);
 
 				player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.get().getString("creative-mode-text")));
 

@@ -1,6 +1,6 @@
 name: Fly
 main: net.maplemc.cooper.Main
-version: 1.4
+version: 1.5
 api-version: 1.12.2
 commands:
    fly:
@@ -12,3 +12,6 @@ commands:
    gmc:
       description: Sets your gamemode to creative.
       usage: /gmc
+   rename:
+      description: Renames your held item.
+      usage: /rename <args>

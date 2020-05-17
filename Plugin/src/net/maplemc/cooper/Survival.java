@@ -24,10 +24,11 @@ public class Survival implements CommandExecutor {
 
 		if (commandsend instanceof Player) {
 			Player player = (Player) commandsend;
+	        config = new ConfigFile(plugin);
+
 
 			if (player.hasPermission(config.get().getString("gms-permission-node"))) {
 				player.setGameMode(GameMode.SURVIVAL);
-		        config = new ConfigFile(plugin);
 
 				player.sendMessage(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&', config.get().getString("survival-mode-text")));
 
